@@ -1,0 +1,43 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+  }
+  .heart {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    transform: rotate(-45deg);
+    margin: 50px;
+    animation: heartbeat 1.5s infinite ease-in-out;
+  }
+  .heart::before,
+  .heart::after {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    border-radius: 100%;
+  }
+  
+  .heart::before {
+    top: -45px;
+    left: 0;
+  }
+  .heart::after {
+    top: 0;
+    left: 45px;
+  }
+  
+  @keyframes heartbeat {
+    0%, 100% {
+      transform: scale(1) rotate(-45deg);
+    }
+    50% {
+      transform: scale(1.1) rotate(-45deg);
+    }
+  }
